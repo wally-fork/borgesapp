@@ -7,4 +7,11 @@ To Do's:
 
 - Hacer una primer cliente con Emacs
 
-- Acomodar los estilos
+- Acomodar los estilos y aceptar el input como textile...
+
+ejemplo, de curl para pruebas rapidas
+curl -H "Content-Type: text/xml" -d "<essay><content>Holaaaaaaa</content><title>yeah</title></essay>" -X POST http://localhost:3000/essays.xml -i  
+
+Investigar como funcionan varios clientes de esta forma...
+
+
