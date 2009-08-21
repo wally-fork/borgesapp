@@ -1,11 +1,14 @@
+
 <p>
   <b>Title:</b>
   <%=h @essay.title %>
 </p>
 
+
+<!-- y aqui convertir el contenido en html -->
 <p>
   <b>Content:</b>
-  <%=h @essay.content %>
+  <%=RedCloth.new(@essay.content).to_html %>
 </p>
 
 

@@ -1,3 +1,28 @@
+Ok, ya hice lo que seria el prototipo del prototipo de lo que quiero hacer. 
+La principal forma en que se va a utilizar esta aplicacion es dando creando unos mini-templates
+sobre los cuales te puedes apoyar para crear escritos creativos, no solamente aquellos que son lineales.
+Por ejemplo, poder escribir un libro de forma aleatoria, o crear los personajes desde el principio.
+Tambien deberia de ser publicable lo mas rapido posible a como se penso.
+
+Lo mas importante es que pueda servir como una plataforma sobre la cual vas a poner tus escritos,
+y solamente tu los vas a poder ver y alimentar el servicio etc...
+
+Lo mas facil es un essay a la paul graham. --> Crear estilo para esto.
+
+* Pensar acerca de cual seria la mejor manera para acceder a los recursos. ~/essays/1-caminando o ~/essays/caminando por ejemplo. Por lo pronto vamonos moviendo hacia la forma no lineal. A los puros escritos.
+
+-------------------------- Cosas tecnicas ----------------------------------
+
+* Soporte para poder realizar POSTS en otros idiomas desde el elisp ÆüËÜ¸ì
+* Pensar como seria la mecanica para los updates.
+* Quitarle los estilos por default del scaffold y ponerle el estilo de 960gs. Los estilos serian simples.
+* Soporte para pdf's con Prawn... PDF's con estilo !?!?!?
+* Se va a tener una carpeta que se llama ~/escritos/ y ahi adentro es donde se meterian los archivos
+* Feature que despues de cierto numero de lineas, las lineas comienzan en otra columna... hmmm paginacion, en que estaba
+pensando, eso si seria conveniente para los pdf's pero para el browser definitivamente no...
+
+
+;; ------------------------------------------------
 Primera version del proyecto
 
 To Do's:
@@ -5,7 +30,7 @@ To Do's:
 - Hacer las rutas de esta forma
   user/essays/(crud)
 
-- Hacer una primer cliente con Emacs
+- Hacer una primer cliente con Emacs . Ya. Pero me falta agregarlo soporte para utf-8 por ejemplo...
 
 - Acomodar los estilos y aceptar el input como textile...
 
@@ -14,4 +39,6 @@ curl -H "Content-Type: text/xml" -d "<essay><content>Holaaaaaaa</content><title>
 
 Investigar como funcionan varios clientes de esta forma...
 
+:update Agosto 2000
 
+Vamos poniendole lo de textile, DONE!!!
