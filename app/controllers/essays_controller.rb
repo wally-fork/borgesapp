@@ -13,7 +13,8 @@ class EssaysController < ApplicationController
   # GET /essays/1
   # GET /essays/1.xml
   def show
-    @essay = Essay.find(params[:id])
+    #     @essay = Essay.find(params[:id]) unless !params[:id].nil?
+    @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,21 +22,22 @@ class EssaysController < ApplicationController
     end
   end
 
+  # No se van a permitir named routes. puro REST
   # GET /essays/new
   # GET /essays/new.xml
-  def new
-    @essay = Essay.new
+  # def new
+  #     @essay = Essay.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @essay }
-    end
-  end
+  #     respond_to do |format|
+  #       format.html # new.html.erb
+  #       format.xml  { render :xml => @essay }
+  #     end
+  #   end
 
   # GET /essays/1/edit
-  def edit
-    @essay = Essay.find(params[:id])
-  end
+  #   def edit
+  #     @essay = Essay.find(params[:id])
+  #   end
 
   # POST /essays
   # POST /essays.xml

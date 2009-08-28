@@ -1,16 +1,16 @@
 
-<p>
-  <b>Title:</b>
+<div style="font-weight:bold; font-size:30px ">
   <%=h @essay.title %>
-</p>
+</div>
 
 
-<!-- y aqui convertir el contenido en html -->
-<p>
-  <b>Content:</b>
+<div>
   <%=RedCloth.new(@essay.content).to_html %>
-</p>
+</div>
 
 
-<%= link_to 'Edit', edit_essay_path(@essay) %> |
-<%= link_to 'Back', essays_path %>
+
+
+ link_to 'Edit', edit_essay_path(@essay) |
+ link_to 'Back', essays_path 
+			     
