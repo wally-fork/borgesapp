@@ -1,12 +1,17 @@
 ActionController::Routing::Routes.draw do |map|
 
-  
-  # Ruta normal para los recursos /essays/new tiene un overlap ahora pues 
+
+  # Ruta normal para los recursos /essays/new tiene un overlap ahora pues
   # piensa que es un essay con titulo 'new'
   # FIXME: Que tal si crea un essays que se llama new o edit  jajajaja
   map.connect 'essays/:title.:format',
   :controller => 'essays',
   :action     => 'show'
+
+  #   map.resource 'essays/:title.:format',
+  #   :controller => 'essays'
+
+
 
   map.resources :essays
 

@@ -44,6 +44,9 @@ class EssaysController < ApplicationController
   def create
     @essay = Essay.new(params[:essay])
 
+    p "mi titulo es aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    p @essay.title
+
     respond_to do |format|
       if @essay.save
         flash[:notice] = 'Essay was successfully created.'
@@ -59,8 +62,9 @@ class EssaysController < ApplicationController
   # PUT /essays/1
   # PUT /essays/1.xml
   def update
-    @essay = Essay.find(params[:id])
-
+    #     @essay = Essay.find(params[:id])
+    @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
+    
     respond_to do |format|
       if @essay.update_attributes(params[:essay])
         flash[:notice] = 'Essay was successfully updated.'
