@@ -1,4 +1,4 @@
-Hacer que los titles se conviertan en nuevo-essay
+\Hacer que los titles se conviertan en nuevo-essay
 y que si ya habia uno que se llama igual entonces lo nombra nuevo-essay-2
 
 Tambien lo de hacer el index de los essays que hay.
@@ -54,3 +54,12 @@ Investigar como funcionan varios clientes de esta forma...
 :update Agosto 2000
 
 Vamos poniendole lo de textile, DONE!!!
+
+
+
+;;;;;;;;;;;;;; cuidado con este error Last 80 unconsumed characters:
+<?xml" nil t) ;;;  (point) ;;;         (goto-char 243)                 ;nos movem
+Line: 
+Position: 
+Last 80 unconsumed characters:
+<?xml" nil t) ;;;  (point) ;;;         (goto-char 243)                 ;nos movem
