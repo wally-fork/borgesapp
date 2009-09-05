@@ -1,9 +1,9 @@
 
 <div style="font-weight:bold; font-size:30px ">
-  <%=h @essay.title %>
+  <%=h @essay.title.capitalize %>
 </div>
 
 
 <div>
-  <%=RedCloth.new(@essay.content).to_html %>
+  <%=RedCloth.new(@essay.content, [:sanitize_html]).to_html %>
 </div>
