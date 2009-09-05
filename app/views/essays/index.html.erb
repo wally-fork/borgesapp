@@ -10,13 +10,15 @@
   <tr>
     <td><%=h essay.title %></td>
     <td><%=h essay.content %></td>
-    <td><%= link_to 'Show', essay %></td>
-    <td><%= link_to 'Edit', edit_essay_path(essay) %></td>
-    <td><%= link_to 'Destroy', essay, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= %></td>
+    <td><%= link_to "Show", '/essays/' + essay.title %>	</td>
+    <!-- <td><%= link_to 'Edit', edit_essay_path(essay) %></td> -->
+    <!-- <td><%= link_to 'Destroy', essay, :confirm => 'Are you sure?', :method => :delete %></td> -->
+    <td><%= link_to 'Destroy', '/essays/' + essay.title, :method => :delete%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New essay', new_essay_path %>
+<!-- <%= link_to 'New essay', new_essay_path %> -->

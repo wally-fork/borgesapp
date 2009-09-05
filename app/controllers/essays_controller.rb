@@ -10,8 +10,7 @@ class EssaysController < ApplicationController
     end
   end
 
-  # GET /essays/1
-  # GET /essays/1.xml
+  # GET /essays/:title.xml
   def show
     #     @essay = Essay.find(params[:id]) unless !params[:id].nil?
     @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
@@ -80,7 +79,13 @@ class EssaysController < ApplicationController
   # DELETE /essays/1
   # DELETE /essays/1.xml
   def destroy
-    @essay = Essay.find(params[:id])
+    # @essay = Essay.find(params[:id])
+    # Lo que pasa es que el metodo delete me pasa una id en los params de a afuerzas
+    # en este caso se usa params[:id] en vez de params[:title] como lo hice en el show
+    @essay = Essay.find_by_title(params[:id]) if !params[:id].nil?
+    puts "holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    p @essay.inspect
+    # @essay2 = Essay.find(@essay.id)
     @essay.destroy
 
     respond_to do |format|
