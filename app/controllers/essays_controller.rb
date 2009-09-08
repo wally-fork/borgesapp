@@ -7,6 +7,7 @@ class EssaysController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @essays }
+      
     end
   end
 
@@ -18,6 +19,7 @@ class EssaysController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @essay }
+      format.pdf
     end
   end
 

@@ -1,0 +1,8 @@
+\documentclass[12pt]{article}
+\begin{document}
+\section*{<%= @essay.title.capitalize %>}
+%% \begin{itemize}
+%% \item <%= @essay.title.capitalize %> \\
+%% \end{itemize}
+<%= RedCloth.new(@essay.content, [:filter_html]).to_latex %>
+\end{document}
