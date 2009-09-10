@@ -1,26 +1,28 @@
-\documentclass[12pt]{article}
-\usepackage[spanish]{babel}
+\documentclass[10pt]{article}
+%% \usepackage[spanish]{babel}
 %% \begin{document}
 %% Esto el pone un numero al titulo tambien
 %% \section {Title: <%= @essay.title.capitalize %>}
-%% \newcommand{\Eq}{\textrm{Eq}}
-%% \newcommand{\Mod}{\textrm{Mod}}
 \title{On `<%= @essay.title.capitalize %>`}
 \author{W.\ Quevedo \\
         \emph{ITESM.\ Hochschule} \\ \emph{Darmstadt}}
 \date{<%= Time.now %>}
+\twocolumn
 \begin{document}
 \maketitle
 
 \begin{abstract}
-  Esto seria el abstract de un paper. O una payasada o algo asi
+  \emph{Esto seria el abstract de un paper. O una payasada o algo asi}
 \end{abstract}
 \keywords{tag1 tag2 tag3 tag4}
-«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡«¡aaaaaaa
+
+%% \tableofcontents
+
+
 <%= RedCloth.new(@essay.content, [:filter_html]).to_latex %>
 
-
-\bibliographystyle{plain}
-\bibliography{bibliografia}
+%% \addtocontents{toc}{This is an example}
+%% \bibliographystyle{plain}
+%% \bibliography{bibliografia}
 
 \end{document}
