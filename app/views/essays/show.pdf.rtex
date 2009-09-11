@@ -8,7 +8,7 @@
 \author{Waldemar Quevedo Salinas \\ Hola}
 \date{10 de septiembre del 2009}
 \begin{document}
-\begin{CJK*}{UTF8}{min}
+%% \begin{CJK*}{UTF8}{min}
 \maketitle
 \begin{abstract}
   \emph{Abstract del documento}
@@ -16,7 +16,7 @@
 
 <%= RedCloth.new(@essay.content, [:filter_html]).to_latex %>
 
-\end{CJK*}
+%% \end{CJK*}
 \end{document}
 
 %%% Local Variables:
