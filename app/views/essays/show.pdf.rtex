@@ -1,28 +1,26 @@
 \documentclass[10pt]{article}
-%% \usepackage[spanish]{babel}
-%% \begin{document}
-%% Esto el pone un numero al titulo tambien
-%% \section {Title: <%= @essay.title.capitalize %>}
-\title{On `<%= @essay.title.capitalize %>`}
-\author{W.\ Quevedo \\
-        \emph{ITESM.\ Hochschule} \\ \emph{Darmstadt}}
-\date{<%= Time.now %>}
-\twocolumn
+\usepackage[spanish]{babel}
+\usepackage{CJK}
+%% \selectlanguage{spanish}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\title{Proyecto Integrador}
+\author{Waldemar Quevedo Salinas \\ Hola}
+\date{10 de septiembre del 2009}
 \begin{document}
+\begin{CJK*}{UTF8}{min}
 \maketitle
-
 \begin{abstract}
-  \emph{Esto seria el abstract de un paper. O una payasada o algo asi}
+  \emph{Abstract del documento}
 \end{abstract}
-\keywords{tag1 tag2 tag3 tag4}
-
-%% \tableofcontents
-
 
 <%= RedCloth.new(@essay.content, [:filter_html]).to_latex %>
 
-%% \addtocontents{toc}{This is an example}
-%% \bibliographystyle{plain}
-%% \bibliography{bibliografia}
-
+\end{CJK*}
 \end{document}
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
