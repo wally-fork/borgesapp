@@ -1,3 +1,10 @@
+Cambiar todo de pdflatex a xelatex
+
+:tex_command => "xelatex --papersize letter"
+
+http://rtex.rubyforge.org/svn/trunk/README.txt
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,,
 \Hacer que los titles se conviertan en nuevo-essay
 y que si ya habia uno que se llama igual entonces lo nombra nuevo-essay-2
 
