@@ -5,13 +5,20 @@
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \title{Proyecto Integrador}
-\author{Waldemar Quevedo Salinas \\ Hola}
+\author{Waldemar Quevedo Salinas \\ Pablo Misael Esparza Rivas \\ Maria Mercedes Nava Cubillo}
 \date{10 de septiembre del 2009}
 \begin{document}
 %% \begin{CJK*}{UTF8}{min}
 \maketitle
 \begin{abstract}
-  \emph{Abstract del documento}
+  \emph{
+    La forma en que textos creativos se escriben y publican en la web 
+son procesos muy diferentes. La forma más común de publicar en el internet es 
+a través de un blog. Este proyecto trata de definir una nueva forma de
+facilitar la publicación de diferentes tipos de textos los cuales se salgan de 
+la estructura de un blog basándose en la filosofía de arquitectura REST para 
+acceder a ellos y el uso de la tecnología LaTex para publicarlos.
+}
 \end{abstract}
 
 <%= RedCloth.new(@essay.content, [:filter_html]).to_latex %>
