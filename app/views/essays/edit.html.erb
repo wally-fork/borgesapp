@@ -1,6 +1,8 @@
 <h1>Editing essay</h1>
 
-<% form_for(@essay) do |f| %>
+<% form_for :essay,
+            :url => essay_update_url,
+            :html => { :method => :put }  do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -12,7 +14,7 @@
     <%= f.text_area :content %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Create' %>
   </p>
 <% end %>
 

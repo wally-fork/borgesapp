@@ -7,7 +7,7 @@ class EssaysController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @essays }
-      
+
     end
   end
 
@@ -26,32 +26,32 @@ class EssaysController < ApplicationController
   # No se van a permitir named routes. puro REST
   # GET /essays/new
   # GET /essays/new.xml
-  # def new
-  #     @essay = Essay.new
+  def new
+    @essay = Essay.new
 
-  #     respond_to do |format|
-  #       format.html # new.html.erb
-  #       format.xml  { render :xml => @essay }
-  #     end
-  #   end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @essay }
+    end
+  end
 
   # GET /essays/1/edit
-  #   def edit
-  #     @essay = Essay.find(params[:id])
-  #   end
+  def edit
+    @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
+  end
 
   # POST /essays
   # POST /essays.xml
   def create
     @essay = Essay.new(params[:essay])
 
-    p "mi titulo es aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-    p @essay.title
+    # p "mi titulo es aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    # p @essay.title
 
     respond_to do |format|
       if @essay.save
         flash[:notice] = 'Essay was successfully created.'
-        format.html { redirect_to(@essay) }
+        format.html { redirect_to :action => 'show', :title => @essay.title }
         format.xml  { render :xml => @essay, :status => :created, :location => @essay }
       else
         format.html { render :action => "new" }
@@ -65,11 +65,11 @@ class EssaysController < ApplicationController
   def update
     #     @essay = Essay.find(params[:id])
     @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
-    
+
     respond_to do |format|
       if @essay.update_attributes(params[:essay])
         flash[:notice] = 'Essay was successfully updated.'
-        format.html { redirect_to(@essay) }
+        format.html { redirect_to :action => 'show', :title => @essay.title}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
