@@ -1,9 +1,16 @@
 class EssaysController < ApplicationController
+  before_filter :require_user
+
   # GET /essays
   # GET /essays.xml
   def index
-    @essays = Essay.all
 
+    # debo de dar solo los que sean del current_user
+    # debera de haber otra ruta con la cual otro usuario puede ver el index de otro...
+    @essays = Essay.all(:conditions => { :user_id => current_user.id})
+    
+    # tengo que buscar el id de ese usuario...
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @essays }
@@ -11,10 +18,29 @@ class EssaysController < ApplicationController
     end
   end
 
+  # DONE!!!
+  def hexagon_index
+    # debo de dar solo los que sean del current_user
+    # debera de haber otra ruta con la cual otro usuario puede ver el index de otro...
+    # recibira los params con el nombre params[:user].id
+    # @essays = Essay.all(:conditions => { :user_id => 1})
+
+    user = User.find_by_login(params[:username])
+    @essays = Essay.all(:conditions => { :user_id => user.id})
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @essays }
+    end
+  end
+
   # GET /essays/:title.xml
   def show
-    #     @essay = Essay.find(params[:id]) unless !params[:id].nil?
-    @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
+    
+    user = User.find_by_login(params[:username])
+    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => user.id})
+    # @essays = Essay.first
+    # @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,10 +48,8 @@ class EssaysController < ApplicationController
       format.pdf
     end
   end
-
-  # No se van a permitir named routes. puro REST
-  # GET /essays/new
-  # GET /essays/new.xml
+  
+  # GET /new/essays.html
   def new
     @essay = Essay.new
 
@@ -35,23 +59,24 @@ class EssaysController < ApplicationController
     end
   end
 
-  # GET /essays/1/edit
+  # GET /edit/essays/:title
   def edit
-    @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
+    # como el de show
+    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => current_user.id})
+    # @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
   end
 
   # POST /essays
   # POST /essays.xml
   def create
     @essay = Essay.new(params[:essay])
-
-    # p "mi titulo es aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-    # p @essay.title
+    @essay.user_id = current_user.id
 
     respond_to do |format|
       if @essay.save
         flash[:notice] = 'Essay was successfully created.'
-        format.html { redirect_to :action => 'show', :title => @essay.title }
+        # format.html { redirect_to :action => 'show', :title => @essay.title }
+        format.html { redirect_to '#{current_user.login}/essays/#{@essay.title}'}
         format.xml  { render :xml => @essay, :status => :created, :location => @essay }
       else
         format.html { render :action => "new" }
@@ -60,16 +85,16 @@ class EssaysController < ApplicationController
     end
   end
 
-  # PUT /essays/1
-  # PUT /essays/1.xml
+  # PUT /essays/:title
+  # PUT /essays/:title.xml
   def update
-    #     @essay = Essay.find(params[:id])
     @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
 
     respond_to do |format|
       if @essay.update_attributes(params[:essay])
         flash[:notice] = 'Essay was successfully updated.'
-        format.html { redirect_to :action => 'show', :title => @essay.title}
+        # format.html { redirect_to :action => 'show', :title => @essay.title}
+        format.html { redirect_to '#{current_user.login}/essays/#{@essay.title}'}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,6 +103,8 @@ class EssaysController < ApplicationController
     end
   end
 
+
+  # Acomodarlo a las nuevas rutas...
   # DELETE /essays/1
   # DELETE /essays/1.xml
   def destroy

@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-
-  # Ruta normal para los recursos /essays/new tiene un overlap ahora pues
-  # piensa que es un essay con titulo 'new'
+  
+  # Estas son las rutas que va a usar emacs para los create, show y updates...
   map.essay_show 'essays/:title.:format',  :controller => 'essays',
                                            :action     => 'show',  
                                            :conditions => { :method => :get}
@@ -10,20 +9,58 @@ ActionController::Routing::Routes.draw do |map|
                                              :action     => 'update',  
                                              :conditions => { :method => :put}
 
+
+  
   # Routes for the html views only
   map.essay_new 'new/essay/',  :controller => 'essays',
                                :action     => 'new',  
                                :conditions => { :method => :get}
-
+  
   map.essay_edit 'edit/essay/:title',  :controller => 'essays',
                                        :action     => 'edit',  
                                        :conditions => { :method => :get}
 
+
+  # esto me lo hace anidado pero de todos modos llama lo mismo...
+  # map.resources :users do |users|
+  # users.resources :essays
+  # end
+  
+  # Rutas que necesitan tener el current_user embebido...
+  # uts... creo que voy a tener que modificar todas las vistas...
+  map.with_options :controller => 'essays' do |m|
+    m.with_options :conditions => { :method => :get } do |get|
+      # Se deben de tener vistas separadas o debo de usar las mismas para todo???
+      get.hexagon_essays ':username/essays', :action => 'hexagon_index'
+      get.hexagon_essays ':username/essays/:title',     :action => 'show' 
+      # get.essays ':username/new/essay/',        :action => 'new' 
+      # get.essays ':username/edit/essay/:title', :action => 'edit' 
+    end
+  end
+  
+
+  # muy bonito pero asi no se hace...
+  # deberia de ser anidada, como user has_many essays.
+
+  # no se porque no sirvieron estas...
+  # map.user_essays 'user/essays/',  :controller => 'essays',
+  # :action     => 'index',  
+  # :conditions => { :method => :get}
   #   map.resource 'essays/:title.:format',
   #   :controller => 'essays'
   # map.resources :essays, :path_prefix => "/essays/:title.:format"
   
   map.resources :essays
+
+
+  # Para lo de los usuarios
+  map.resource :account, :controller => "users"
+
+  # FIXME: Para que tengo esta ruta???
+  map.resources :users          
+  map.resource :user_session
+  map.root :controller => "user_sessions", :action => "new"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

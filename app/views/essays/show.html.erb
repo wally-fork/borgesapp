@@ -1,9 +1,9 @@
 
 <div style="font-weight:bold; font-size:30px ">
-  <%=h @essay.title.capitalize %>
+  <%=h @essay.title.capitalize if !@essay.nil? %>
 </div>
 
 
 <div>
-  <%=RedCloth.new(@essay.content, [:sanitize_html]).to_html %>
+  <%=RedCloth.new(@essay.content, [:sanitize_html]).to_html if !@essay.nil? %>
 </div>

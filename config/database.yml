@@ -34,7 +34,7 @@ test:
   database: borges_test
   pool: 5
   username: root
-  password:
+  password: inovaz08
   socket: /var/run/mysqld/mysqld.sock
 
 production:
