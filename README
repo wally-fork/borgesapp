@@ -1,3 +1,18 @@
+Ok ok, ya aprendi como hacer la authentication con curl. Cual sera el approach con emacs???
+
+curl -H 'Accept: application/xml' -H 'Content-Type: application/xml' -u admin:admin http://localhost:3000/account
+
+Otro ejemplo:
+
+curl -H 'Accept: application/xml' -H 'Content-Type: application/xml' -u admin:admin http://localhost:3000/essays/hello
+
+Joooooo por fin entendi la diferencia entre api users y usuarios
+
+Pero creo que esto deberia de estar encriptado como lo decia el wey de twit.el 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 To dos de la aplicacion.
 
 Ya no estan sirviendo los shows de antes...
