@@ -1,5 +1,5 @@
 class EssaysController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, :except => [:hexagon_index, :hexagon_show]
 
   # GET /essays
   # GET /essays.xml
@@ -8,9 +8,9 @@ class EssaysController < ApplicationController
     # debo de dar solo los que sean del current_user
     # debera de haber otra ruta con la cual otro usuario puede ver el index de otro...
     @essays = Essay.all(:conditions => { :user_id => current_user.id})
-    
+
     # tengo que buscar el id de ese usuario...
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @essays }
@@ -18,7 +18,7 @@ class EssaysController < ApplicationController
     end
   end
 
-  # DONE!!!
+  # public
   def hexagon_index
     # debo de dar solo los que sean del current_user
     # debera de haber otra ruta con la cual otro usuario puede ver el index de otro...
@@ -36,9 +36,22 @@ class EssaysController < ApplicationController
 
   # GET /essays/:title.xml
   def show
-    
+
+    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => current_user.id})
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @essay }
+      format.pdf
+    end
+  end
+
+  # public
+  def hexagon_show
+
     user = User.find_by_login(params[:username])
     @essay = Essay.first(:conditions => { :title => params[:title], :user_id => user.id})
+
     # @essays = Essay.first
     # @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
 
@@ -48,7 +61,7 @@ class EssaysController < ApplicationController
       format.pdf
     end
   end
-  
+
   # GET /new/essays.html
   def new
     @essay = Essay.new
@@ -112,7 +125,7 @@ class EssaysController < ApplicationController
     # Lo que pasa es que el metodo delete me pasa una id en los params de a afuerzas
     # en este caso se usa params[:id] en vez de params[:title] como lo hice en el show
     @essay = Essay.find_by_title(params[:id]) if !params[:id].nil?
-    puts "holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
     p @essay.inspect
     # @essay2 = Essay.find(@essay.id)
     @essay.destroy

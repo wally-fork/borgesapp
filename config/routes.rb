@@ -8,8 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   map.essay_update 'essays/:title.:format',  :controller => 'essays',
                                              :action     => 'update',  
                                              :conditions => { :method => :put}
-
-
   
   # Routes for the html views only
   map.essay_new 'new/essay/',  :controller => 'essays',
@@ -21,10 +19,10 @@ ActionController::Routing::Routes.draw do |map|
                                        :conditions => { :method => :get}
 
 
-  # esto me lo hace anidado pero de todos modos llama lo mismo...
-  # map.resources :users do |users|
-  # users.resources :essays
-  # end
+  # Esto crea las rutas para POST, PUT, DESTROY de un recurso, creo 
+  map.resources :users do |users|
+    users.resources :essays
+  end
   
   # Rutas que necesitan tener el current_user embebido...
   # uts... creo que voy a tener que modificar todas las vistas...
@@ -32,7 +30,7 @@ ActionController::Routing::Routes.draw do |map|
     m.with_options :conditions => { :method => :get } do |get|
       # Se deben de tener vistas separadas o debo de usar las mismas para todo???
       get.hexagon_essays ':username/essays', :action => 'hexagon_index'
-      get.hexagon_essays ':username/essays/:title',     :action => 'show' 
+      get.hexagon_essays ':username/essays/:title',     :action => 'hexagon_show' 
       # get.essays ':username/new/essay/',        :action => 'new' 
       # get.essays ':username/edit/essay/:title', :action => 'edit' 
     end

@@ -1,3 +1,16 @@
+To dos de la aplicacion.
+
+Ya no estan sirviendo los shows de antes...
+Debo de acomodar la aplicacion lo suficiente para que funcione como
+lo hacia antes...
+
+Debo de modificar borges-el para que se pueda autenticar...
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Cambiar todo de pdflatex a xelatex
 
 :tex_command => "xelatex --papersize letter"
