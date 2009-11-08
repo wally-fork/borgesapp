@@ -1,3 +1,28 @@
+Update despues de mucho tiempo: 20 de Octubre del 2009
+
+Deberia ya de tener por lo menos algo con lo que pueda escribir textos privados,
+casi no tengo tiempo... Tambien deberia de hacer pruebas unitarias para saber 
+que es lo que hecho hasta cierto momento... No recuerdo muy bien que es lo que llevaba 
+hasta ahora.
+
+Algunas de las preguntas que me hago de la aplicacion en este momento son:
+
+Porque tengo rutas para account, session, y user_session???
+
+Prosa sobre la aplicacion:
+
+El UserSession se encarga de los logins por ejemplo... mientras que
+Users se encarga de registrar las accounts.
+
+Las rutas de /account y /users son las mismas...
+
+El POST lo hace a /user_sessions.
+
+Los 2 usuarios ejemplo que tengo son wallyqs:admin y admin:admin
+
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 Ok ok, ya aprendi como hacer la authentication con curl. Cual sera el approach con emacs???
 
 curl -H 'Accept: application/xml' -H 'Content-Type: application/xml' -u admin:admin http://localhost:3000/account
