@@ -7,6 +7,9 @@
     <title>Essays: <%= controller.action_name %></title>
     <%= stylesheet_link_tag 'scaffold' %>
     <%= stylesheet_link_tag 'site_layout' %>
+    <style type="text/css" media="screen">
+      <%= yield(:style) %>
+    </style>
   </head>
   <body>
     
