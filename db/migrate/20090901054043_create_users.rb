@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :crypted_password, :null => false
       t.string :password_salt, :null => false
       t.string :persistence_token, :null => false
+      t.string :first_name, :limit => 100
+      t.string :last_name, :limit => 100
       t.integer :login_count, :default => 0, :null => false
       t.datetime :last_request_at
       t.datetime :last_login_at
@@ -20,7 +22,7 @@ class CreateUsers < ActiveRecord::Migration
     add_index :users, :last_request_at
 
     # add user_id columns to essays
-      # t.user_id :integer
+    # t.user_id :integer
     add_column :essays, :user_id, :integer
     # sera bueno poner este index aqui
     add_index :essays, :user_id

@@ -1,10 +1,26 @@
-Public:
+<h5>You're at <%= @username %>'s hexagon</h1>
 
-<div style="font-weight:bold; font-size:30px ">
-  <%=h @essay.title.capitalize if !@essay.nil? %>
-</div>
+<% unless @essay.is_private -%>
+
+  <div style="font-weight:bold; font-size:30px ">
+    <%=h @essay.title.capitalize if !@essay.nil? %>
+  </div>
+
+  <div>
+    <%=RedCloth.new(@essay.content, [:sanitize_html]).to_html if !@essay.nil? %>
+  </div>
+
+<% else -%>
+  
+  <br />
+  
+  This a private part of <%= @user.login %>'s hexagon.
+  
+  <br />
+  <br />
+
+  <%= link_to "go to Essays", "/#{@username}/essays/" %>
+
+<% end -%>
 
 
-<div>
-  <%=RedCloth.new(@essay.content, [:sanitize_html]).to_html if !@essay.nil? %>
-</div>

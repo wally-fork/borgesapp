@@ -6,16 +6,21 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Essays: <%= controller.action_name %></title>
     <%= stylesheet_link_tag 'scaffold' %>
+    <%= stylesheet_link_tag 'site_layout' %>
   </head>
   <body>
+    
+    <div id="login_nav">
+      
+      <% if !current_user %>
+        <%= link_to "Register", new_account_path %> |
+        <%= link_to "Log In", new_user_session_path %> |
+      <% else %>
+        <%= link_to "My Account", account_path %> |
+        <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+      <% end %>
 
-    <% if !current_user %>
-      <%= link_to "Register", new_account_path %> |
-      <%= link_to "Log In", new_user_session_path %> |
-    <% else %>
-      <%= link_to "My Account", account_path %> |
-      <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
-    <% end %>
+    </div>
 
     <p style="color: green"><%= flash[:notice] %></p>
 

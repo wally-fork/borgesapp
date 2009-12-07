@@ -18,14 +18,15 @@ class EssaysController < ApplicationController
     end
   end
 
-  # public
+  # PUBLIC
   def hexagon_index
-    # debo de dar solo los que sean del current_user
+    # Debo de dar solo los que sean del current_user
     # debera de haber otra ruta con la cual otro usuario puede ver el index de otro...
     # recibira los params con el nombre params[:user].id
     # @essays = Essay.all(:conditions => { :user_id => 1})
 
-    user = User.find_by_login(params[:username])
+    @username = params[:username]
+    user = User.find_by_login(@username)
     @essays = Essay.all(:conditions => { :user_id => user.id})
 
     respond_to do |format|
@@ -36,9 +37,8 @@ class EssaysController < ApplicationController
 
   # GET /essays/:title.xml
   def show
-
     @essay = Essay.first(:conditions => { :title => params[:title], :user_id => current_user.id})
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @essay }
@@ -46,11 +46,11 @@ class EssaysController < ApplicationController
     end
   end
 
-  # public
+  # PUBLIC
   def hexagon_show
-
-    user = User.find_by_login(params[:username])
-    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => user.id})
+    @username = params[:username]
+    @user = User.find_by_login(@username)
+    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => @user.id})
 
     # @essays = Essay.first
     # @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
@@ -74,9 +74,7 @@ class EssaysController < ApplicationController
 
   # GET /edit/essays/:title
   def edit
-    # como el de show
     @essay = Essay.first(:conditions => { :title => params[:title], :user_id => current_user.id})
-    # @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
   end
 
   # POST /essays
@@ -107,7 +105,7 @@ class EssaysController < ApplicationController
       if @essay.update_attributes(params[:essay])
         flash[:notice] = 'Essay was successfully updated.'
         # format.html { redirect_to :action => 'show', :title => @essay.title}
-        format.html { redirect_to '#{current_user.login}/essays/#{@essay.title}'}
+        format.html { redirect_to "#{current_user.login}/essays/#{@essay.title}"}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -116,8 +114,6 @@ class EssaysController < ApplicationController
     end
   end
 
-
-  # Acomodarlo a las nuevas rutas...
   # DELETE /essays/1
   # DELETE /essays/1.xml
   def destroy
@@ -125,9 +121,6 @@ class EssaysController < ApplicationController
     # Lo que pasa es que el metodo delete me pasa una id en los params de a afuerzas
     # en este caso se usa params[:id] en vez de params[:title] como lo hice en el show
     @essay = Essay.find_by_title(params[:id]) if !params[:id].nil?
-
-    p @essay.inspect
-    # @essay2 = Essay.find(@essay.id)
     @essay.destroy
 
     respond_to do |format|

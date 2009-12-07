@@ -1,6 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
   
-  # Estas son las rutas que va a usar emacs para los create, show y updates...
+  # CLIENT ROUTES
+  map.essay_index 'essays.:format',  :controller => 'essays',
+                                     :action     => 'index',  
+                                     :conditions => { :method => :get}
+
+
   map.essay_show 'essays/:title.:format',  :controller => 'essays',
                                            :action     => 'show',  
                                            :conditions => { :method => :get}
@@ -9,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
                                              :action     => 'update',  
                                              :conditions => { :method => :put}
   
-  # Routes for the html views only
+  # HTML CRUD
   map.essay_new 'new/essay/',  :controller => 'essays',
                                :action     => 'new',  
                                :conditions => { :method => :get}
@@ -24,8 +29,8 @@ ActionController::Routing::Routes.draw do |map|
     users.resources :essays
   end
   
-  # Rutas que necesitan tener el current_user embebido...
-  # uts... creo que voy a tener que modificar todas las vistas...
+  
+  # LOWEST PRIORITY
   map.with_options :controller => 'essays' do |m|
     m.with_options :conditions => { :method => :get } do |get|
       # Se deben de tener vistas separadas o debo de usar las mismas para todo???
@@ -35,7 +40,21 @@ ActionController::Routing::Routes.draw do |map|
       # get.essays ':username/edit/essay/:title', :action => 'edit' 
     end
   end
-  
+
+  map.resource :account, :controller => "users"
+
+  # FIXME: Para que tengo esta ruta???
+  map.resources :users          
+  map.resource :user_session
+
+  # USER'S HEXAGON HOME SHOULD HAVE THE LOWEST PRIORITY
+  map.with_options :controller => 'homepage' do |m|
+    m.with_options :conditions => { :method => :get } do |get|
+      get.hexagon_home ':username/', :action => 'hexagon_home'
+    end
+  end
+
+  map.root :controller => "homepage", :action => "home"
 
   # muy bonito pero asi no se hace...
   # deberia de ser anidada, como user has_many essays.
@@ -49,15 +68,6 @@ ActionController::Routing::Routes.draw do |map|
   # map.resources :essays, :path_prefix => "/essays/:title.:format"
   
   map.resources :essays
-
-
-  # Para lo de los usuarios
-  map.resource :account, :controller => "users"
-
-  # FIXME: Para que tengo esta ruta???
-  map.resources :users          
-  map.resource :user_session
-  map.root :controller => "user_sessions", :action => "new"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -95,8 +105,6 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
-
-  # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
