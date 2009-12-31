@@ -87,7 +87,7 @@ class EssaysController < ApplicationController
       if @essay.save
         flash[:notice] = 'Essay was successfully created.'
         # format.html { redirect_to :action => 'show', :title => @essay.title }
-        format.html { redirect_to '#{current_user.login}/essays/#{@essay.title}'}
+        format.html { redirect_to "#{current_user.login}/essays/#{@essay.title}"}
         format.xml  { render :xml => @essay, :status => :created, :location => @essay }
       else
         format.html { render :action => "new" }

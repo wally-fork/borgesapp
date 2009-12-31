@@ -1,3 +1,24 @@
+Diciembre 31 de 2009, 
+
+Cambiar las rutas de /wallyqs a /users/wallyqs... no?
+Deberia de tener dos cosas, RESOURCE_NAME y TITLE normal. Por eso he tenido problemas. Por que los mezclo...
+Ok, entonces cambiar todos los title que hice a resource_name o algo asi...
+
+==================================================
+
+Diciembre 8 de 2009 
+
+De ahora en adelante los essays son escritos
+Tengo que pensar a que me refiero cuando hablo de 
+
+essays
+story
+fuga
+
+creo que lo unico que cambiaria dependiendo de cada uno de ellos,
+es el estilo que tendria cada una de las páginas.
+Ok hora de programar y avanzar en este proyecto 
+
 Diciembre 6 de 2009
 -------------------
 
@@ -7,6 +28,12 @@ Quiero dejar hecho lo siguiente:
 - Que se vean de mejor forma el listado de los essays
 - Hacer el deploy en el server en una diferente base de datos
 (desde 0 eh)
+- Tengo un problema con borges-el al momento de solicitar un
+recurso que tiene espacios
+- Problema cuando el content del ensayo esta vacio.
+- Debo de pensar en como es que le voy a poner titulo a los ensayos
+(nah, creo que esta forma esta bien pero si deberia de hacer el anything de los ensayos que voy escribiendo)
+
 
 
 ------------------------------------------------------------------------------------------------------

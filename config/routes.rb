@@ -35,7 +35,7 @@ ActionController::Routing::Routes.draw do |map|
     m.with_options :conditions => { :method => :get } do |get|
       # Se deben de tener vistas separadas o debo de usar las mismas para todo???
       get.hexagon_essays ':username/essays', :action => 'hexagon_index'
-      get.hexagon_essays ':username/essays/:title',     :action => 'hexagon_show' 
+      get.hexagon_essays ':username/essays/:title.:format',     :action => 'hexagon_show' 
       # get.essays ':username/new/essay/',        :action => 'new' 
       # get.essays ':username/edit/essay/:title', :action => 'edit' 
     end

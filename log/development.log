@@ -11168,3 +11168,590 @@ Rendering homepage/hexagon_home
   [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-07 07:33:55', `last_request_at` = '2009-12-07 07:33:55' WHERE `id` = 1[0m
   [4;35;1mSQL (5.9ms)[0m   [0mCOMMIT[0m
 Completed in 141ms (View: 86, DB: 47) | 200 OK [http://localhost/borges]
+  [4;36;1mSQL (40.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-08 21:32:52) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 397ms (View: 210, DB: 222) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#hexagon_show (for 127.0.0.1 at 2009-12-08 21:35:02) [GET]
+  Parameters: {"title"=>"aaa", "action"=>"hexagon_show", "username"=>"admin", "controller"=>"essays"}
+  [4;35;1mUser Columns (8.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (21.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'admin') LIMIT 1[0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/essays_controller.rb:53:in `hexagon_show'
+
+Rendered rescues/_trace (56.7ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-08 21:35:15) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+Completed in 44ms (View: 35, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (14.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-08 21:36:37) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '3') LIMIT 1[0m
+Completed in 33ms (View: 26, DB: 18) | 200 OK [http://localhost/]
+  [4;36;1mSQL (18.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-31 01:23:13) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 256ms (View: 204, DB: 63) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-12-31 01:23:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 76ms (View: 30, DB: 3) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-31 01:23:27) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"wallyqs"}, "action"=>"create", "authenticity_token"=>"SXCdW1J/LXyBLaBsuDo2XO2EaIheZSyCPVO29OJTr9g=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (12.9ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'wallyqs') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 558ms (View: 9, DB: 29) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (7.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-31 01:23:35) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "action"=>"create", "authenticity_token"=>"SXCdW1J/LXyBLaBsuDo2XO2EaIheZSyCPVO29OJTr9g=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'admin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 86ms (View: 10, DB: 12) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-12-31 01:23:46) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"wallyqs"}, "action"=>"create", "authenticity_token"=>"SXCdW1J/LXyBLaBsuDo2XO2EaIheZSyCPVO29OJTr9g=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.6ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'wallyqs') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 73ms (View: 9, DB: 7) | 200 OK [http://localhost/user_session]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-31 01:23:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.3ms)
+Completed in 103ms (View: 55, DB: 3) | 200 OK [http://localhost/account/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-31 01:24:08) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"SXCdW1J/LXyBLaBsuDo2XO2EaIheZSyCPVO29OJTr9g=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"wallyqs"}}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (12.8ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'wallyqs') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO `users` (`created_at`, `last_request_at`, `crypted_password`, `updated_at`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `last_name`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `first_name`) VALUES('2009-12-31 07:24:08', '2009-12-31 07:24:08', 'fb02b1c83a8858a2c251b885af159838f732ee96d12c6c19eb811c52ed0a6c331a21642cb7e8cb115ecccf73445696e385197f0827fafc67a8c006e4cb47e529', '2009-12-31 07:24:08', '127.0.0.1', 'kpue2vykoLT7Xo06MO2U', '2009-12-31 07:24:08', '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92', NULL, 1, NULL, 'wallyqs', NULL, NULL)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 402ms (DB: 19) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-12-31 01:24:08) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:24:08', `last_request_at` = '2009-12-31 07:24:08' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 77ms (View: 12, DB: 5) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#hexagon_home (for 127.0.0.1 at 2009-12-31 01:24:22) [GET]
+  Parameters: {"action"=>"hexagon_home", "username"=>"wallyqs", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/hexagon_home
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:24:22', `last_request_at` = '2009-12-31 07:24:22' WHERE `id` = 2[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mCOMMIT[0m
+Completed in 128ms (View: 104, DB: 14) | 200 OK [http://localhost/wallyqs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#hexagon_index (for 127.0.0.1 at 2009-12-31 01:24:28) [GET]
+  Parameters: {"action"=>"hexagon_index", "username"=>"wallyqs", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'wallyqs') LIMIT 1[0m
+  [4;35;1mEssay Load (0.6ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`user_id` = 2) [0m
+Rendering template within layouts/application
+Rendering essays/hexagon_index
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:24:28', `last_request_at` = '2009-12-31 07:24:28' WHERE `id` = 2[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+Completed in 260ms (View: 181, DB: 9) | 200 OK [http://localhost/wallyqs/essays/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#new (for 127.0.0.1 at 2009-12-31 01:24:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"essays"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:24:38', `last_request_at` = '2009-12-31 07:24:38' WHERE `id` = 2[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mEssay Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `essays`[0m
+Rendering template within layouts/application
+Rendering essays/new
+Completed in 126ms (View: 37, DB: 11) | 200 OK [http://localhost/new/essay]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#create (for 127.0.0.1 at 2009-12-31 01:25:09) [POST]
+  Parameters: {"essay"=>{"title"=>"nuevo ensayo que escribo", "content"=>"h2. como manejo lo de los titulos en el header?"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"SXCdW1J/LXyBLaBsuDo2XO2EaIheZSyCPVO29OJTr9g=", "controller"=>"essays"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:25:09', `last_request_at` = '2009-12-31 07:25:09' WHERE `id` = 2[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mEssay Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `essays`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEssay Create (0.4ms)[0m   [0mINSERT INTO `essays` (`created_at`, `title`, `updated_at`, `is_private`, `user_id`, `content`) VALUES('2009-12-31 07:25:09', 'nuevo ensayo que escribo', '2009-12-31 07:25:09', 0, 2, 'h2. como manejo lo de los titulos en el header?')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000#{current_user.login}/essays/#{@essay.title}
+Completed in 90ms (DB: 10) | 302 Found [http://localhost/essays]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-31 01:25:09) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:25:09', `last_request_at` = '2009-12-31 07:25:09' WHERE `id` = 2[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCOMMIT[0m
+Completed in 72ms (View: 57, DB: 7) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-31 01:26:30) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:26:30', `last_request_at` = '2009-12-31 07:26:30' WHERE `id` = 2[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCOMMIT[0m
+Completed in 231ms (View: 209, DB: 7) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#hexagon_index (for 127.0.0.1 at 2009-12-31 01:26:38) [GET]
+  Parameters: {"action"=>"hexagon_index", "username"=>"wallyqs", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'wallyqs') LIMIT 1[0m
+  [4;35;1mEssay Load (0.6ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`user_id` = 2) [0m
+Rendering template within layouts/application
+Rendering essays/hexagon_index
+  [4;36;1mEssay Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:26:38', `last_request_at` = '2009-12-31 07:26:38' WHERE `id` = 2[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCOMMIT[0m
+Completed in 100ms (View: 43, DB: 10) | 200 OK [http://localhost/wallyqs/essays/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#hexagon_show (for 127.0.0.1 at 2009-12-31 01:26:41) [GET]
+  Parameters: {"title"=>"nuevo ensayo que escribo", "action"=>"hexagon_show", "username"=>"wallyqs", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'wallyqs') LIMIT 1[0m
+  [4;35;1mEssay Load (0.7ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`title` = 'nuevo ensayo que escribo' AND `essays`.`user_id` = 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering essays/hexagon_show
+  [4;36;1mEssay Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:26:41', `last_request_at` = '2009-12-31 07:26:41' WHERE `id` = 2[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+Completed in 154ms (View: 97, DB: 10) | 200 OK [http://localhost/wallyqs/essays/nuevo%20ensayo%20que%20escribo]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEssays (20090810161922)
+Migrating to CreateUsers (20090901054043)
+Migrating to CreateSessions (20090913174916)
+Migrating to AddIsPrivateToEssays (20091124231707)
+Migrating to AddColumnResourceNameToEssays (20091231073402)
+  [4;36;1mSQL (161.1ms)[0m   [0;1mALTER TABLE `essays` ADD `resource_name` varchar(255)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091231073402')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `essays`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `essays`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `essays`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEssays (20090810161922)
+  [4;35;1mSQL (16.1ms)[0m   [0mCREATE TABLE `essays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090810161922')[0m
+Migrating to CreateUsers (20090901054043)
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime, `login` varchar(255) NOT NULL, `crypted_password` varchar(255) NOT NULL, `password_salt` varchar(255) NOT NULL, `persistence_token` varchar(255) NOT NULL, `first_name` varchar(100), `last_name` varchar(100), `login_count` int(11) DEFAULT 0 NOT NULL, `last_request_at` datetime, `last_login_at` datetime, `current_login_at` datetime, `last_login_ip` varchar(255), `current_login_ip` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (10.0ms)[0m   [0;1mCREATE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;35;1mSQL (33.2ms)[0m   [0mCREATE INDEX `index_users_on_persistence_token` ON `users` (`persistence_token`)[0m
+  [4;36;1mSQL (15.9ms)[0m   [0;1mCREATE INDEX `index_users_on_last_request_at` ON `users` (`last_request_at`)[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mALTER TABLE `essays` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (9.1ms)[0m   [0;1mCREATE INDEX `index_essays_on_user_id` ON `essays` (`user_id`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090901054043')[0m
+Migrating to CreateSessions (20090913174916)
+  [4;36;1mSQL (16.5ms)[0m   [0;1mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (25.6ms)[0m   [0mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;36;1mSQL (8.8ms)[0m   [0;1mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090913174916')[0m
+Migrating to AddIsPrivateToEssays (20091124231707)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mALTER TABLE `essays` ADD `is_private` tinyint(1) DEFAULT 0[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091124231707')[0m
+Migrating to AddColumnPrettyTitleToEssays (20091231073402)
+  [4;36;1mSQL (59.9ms)[0m   [0;1mALTER TABLE `essays` ADD `pretty_title` varchar(255)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091231073402')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `essays`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mdescribe `essays`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `essays`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-12-31 01:42:48) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SXCdW1J/LXyBLaBsuDo2XO2EaIheZSyCPVO29OJTr9g=", "controller"=>"user_sessions"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (253.2ms)
+Rendered rescues/_request_and_response (3.7ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-31 01:42:51) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+Completed in 61ms (View: 48, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-12-31 01:42:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 66ms (View: 16, DB: 3) | 200 OK [http://localhost/account/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-12-31 01:43:01) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"bxr3nCkVc5J1TQZQFlffSnWUgw+ojuKam1BL7AEIJ+o=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"wallyqs"}}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'wallyqs') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '8eb6dab8b74c272fb756b3671f8a28c384fa8404ad680cb4a53fc403f13a8683c94dd60d53843f8267842ad963a7a8be43411284ce97735345dfe8fd79aa8a92') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `last_request_at`, `crypted_password`, `updated_at`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `last_name`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `first_name`) VALUES('2009-12-31 07:43:01', '2009-12-31 07:43:01', '91b85197e4ab07df060c7e9d011109a83efd89d01357ed8827b02cd8ea19b57bfa3218c0ae4ae39875329579284c9a151604f048c556308ed51696c2e90ba691', '2009-12-31 07:43:01', '127.0.0.1', 'V4rPPDOxwxYB2i53wiOd', '2009-12-31 07:43:01', '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73', NULL, 1, NULL, 'wallyqs', NULL, NULL)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 86ms (DB: 8) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-12-31 01:43:01) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:43:01', `last_request_at` = '2009-12-31 07:43:01' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 68ms (View: 4, DB: 6) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#home (for 127.0.0.1 at 2009-12-31 01:43:06) [GET]
+  Parameters: {"action"=>"home", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/home
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:43:06', `last_request_at` = '2009-12-31 07:43:06' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+Completed in 76ms (View: 61, DB: 8) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#index (for 127.0.0.1 at 2009-12-31 01:43:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"essays"}
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:43:07', `last_request_at` = '2009-12-31 07:43:07' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mEssay Load (0.6ms)[0m   [0;1mSELECT * FROM `essays` WHERE (`essays`.`user_id` = 1) [0m
+Rendering template within layouts/application
+Rendering essays/index
+Completed in 115ms (View: 33, DB: 8) | 200 OK [http://localhost/essays]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#new (for 127.0.0.1 at 2009-12-31 01:43:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:43:13', `last_request_at` = '2009-12-31 07:43:13' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mEssay Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+Rendering template within layouts/application
+Rendering essays/new
+Completed in 92ms (View: 11, DB: 9) | 200 OK [http://localhost/new/essay]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#create (for 127.0.0.1 at 2009-12-31 01:43:51) [POST]
+  Parameters: {"essay"=>{"title"=>"nuevo", "content"=>"h2. el title es en realidad el resource_name y el pretty title es lo que aparece en el header"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"bxr3nCkVc5J1TQZQFlffSnWUgw+ojuKam1BL7AEIJ+o=", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:43:52', `last_request_at` = '2009-12-31 07:43:52' WHERE `id` = 1[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mEssay Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mEssay Create (0.4ms)[0m   [0;1mINSERT INTO `essays` (`created_at`, `title`, `updated_at`, `is_private`, `user_id`, `pretty_title`, `content`) VALUES('2009-12-31 07:43:52', 'nuevo', '2009-12-31 07:43:52', 0, 1, NULL, 'h2. el title es en realidad el resource_name y el pretty title es lo que aparece en el header')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000wallyqs/essays/nuevo
+Completed in 89ms (DB: 10) | 302 Found [http://localhost/essays]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#show (for 127.0.0.1 at 2009-12-31 01:43:52) [GET]
+  Parameters: {"title"=>"nuevo", "action"=>"show", "controller"=>"essays"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:43:52', `last_request_at` = '2009-12-31 07:43:52' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mEssay Load (0.7ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`title` = 'nuevo' AND `essays`.`user_id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering essays/show
+  [4;36;1mEssay Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+Completed in 120ms (View: 35, DB: 8) | 200 OK [http://localhost/essays/nuevo]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mEssay Load (0.5ms)[0m   [0;1mSELECT * FROM `essays` LIMIT 1[0m
+  [4;35;1mEssay Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `essays`[0m
+  [4;36;1mEssay Load (0.2ms)[0m   [0;1mSELECT * FROM `essays` LIMIT 1[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` LIMIT 1[0m
+  [4;36;1mEssay Load (0.2ms)[0m   [0;1mSELECT * FROM `essays` LIMIT 1[0m
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m
+  [4;36;1mEssay Load (0.7ms)[0m   [0;1mSELECT * FROM `essays` WHERE (`essays`.user_id = 1) [0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.user_id = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.user_id = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` LIMIT 1[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#show (for 127.0.0.1 at 2009-12-31 01:54:35) [GET]
+  Parameters: {"title"=>"nuevo", "action"=>"show", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-12-31 07:54:35', `last_request_at` = '2009-12-31 07:54:35' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mEssay Load (0.2ms)[0m   [0;1mSELECT * FROM `essays` WHERE (`essays`.`title` = 'nuevo' AND `essays`.`user_id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering essays/show
+  [4;35;1mEssay Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `essays`[0m
+Completed in 92ms (View: 10, DB: 9) | 200 OK [http://localhost/essays/nuevo]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#show to pdf (for 127.0.0.1 at 2009-12-31 01:54:39) [GET]
+  Parameters: {"format"=>"pdf", "title"=>"nuevo", "action"=>"show", "controller"=>"essays"}
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:54:39', `last_request_at` = '2009-12-31 07:54:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`title` = 'nuevo' AND `essays`.`user_id` = 1) LIMIT 1[0m
+Rendering essays/show
+  [4;36;1mEssay Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+Completed in 1639ms (View: 1, DB: 0) | 200 OK [http://localhost/essays/nuevo.pdf]
+Streaming file /tmp/rtex-pdf20091231-3620-kxo6zd-0
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-31 01:54:58) [GET]
+
+ActionController::RoutingError (No route matches "/wallyqs/essays/nuevo.pdf" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-31 01:58:20) [GET]
+
+ActionController::RoutingError (No route matches "/wallyqs/essays/nuevo.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#hexagon_show (for 127.0.0.1 at 2009-12-31 01:58:23) [GET]
+  Parameters: {"title"=>"nuevo", "action"=>"hexagon_show", "username"=>"wallyqs", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'wallyqs') LIMIT 1[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`title` = 'nuevo' AND `essays`.`user_id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering essays/hexagon_show
+  [4;36;1mEssay Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5531a5357207f9b64ab351502df261feae3f4467938cb37501c9c1464958cf0c9ade17aa1ad7fb73b7f665a921d097a8743b18c5ac34f0bd2897f9c32d7b1c73') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-12-31 07:58:23', `last_request_at` = '2009-12-31 07:58:23' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCOMMIT[0m
+Completed in 101ms (View: 42, DB: 10) | 200 OK [http://localhost/wallyqs/essays/nuevo]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#hexagon_show to xml (for 127.0.0.1 at 2009-12-31 01:59:36) [GET]
+  Parameters: {"format"=>"xml", "title"=>"nuevo", "action"=>"hexagon_show", "username"=>"wallyqs", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'wallyqs') LIMIT 1[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`title` = 'nuevo' AND `essays`.`user_id` = 1) LIMIT 1[0m
+  [4;36;1mEssay Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+Completed in 63ms (View: 13, DB: 5) | 200 OK [http://localhost/wallyqs/essays/nuevo.xml]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EssaysController#hexagon_show to pdf (for 127.0.0.1 at 2009-12-31 01:59:39) [GET]
+  Parameters: {"format"=>"pdf", "title"=>"nuevo", "action"=>"hexagon_show", "username"=>"wallyqs", "controller"=>"essays"}
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'wallyqs') LIMIT 1[0m
+  [4;35;1mEssay Load (0.2ms)[0m   [0mSELECT * FROM `essays` WHERE (`essays`.`title` = 'nuevo' AND `essays`.`user_id` = 1) LIMIT 1[0m
+Rendering essays/hexagon_show
+  [4;36;1mEssay Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `essays`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 442ms (View: 2, DB: 0) | 200 OK [http://localhost/wallyqs/essays/nuevo.pdf]
+Streaming file /tmp/rtex-pdf20091231-3620-zjqs3v-0
