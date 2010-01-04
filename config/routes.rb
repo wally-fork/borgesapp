@@ -15,11 +15,11 @@ ActionController::Routing::Routes.draw do |map|
                                              :conditions => { :method => :put}
   
   # HTML CRUD
-  map.essay_new 'new/essay/',  :controller => 'essays',
+  map.essay_new 'new/essays/',  :controller => 'essays',
                                :action     => 'new',  
                                :conditions => { :method => :get}
   
-  map.essay_edit 'edit/essay/:title',  :controller => 'essays',
+  map.essay_edit 'edit/essays/:title',  :controller => 'essays',
                                        :action     => 'edit',  
                                        :conditions => { :method => :get}
 
@@ -28,7 +28,13 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users do |users|
     users.resources :essays
   end
+
+  map.resource :account, :controller => "users"
   
+  # FIXME: Para que tengo esta ruta???
+  map.resources :users          
+  map.resource :user_session
+  map.connect 'login.:format', :controller => 'user_sessions', :action => 'new'
   
   # LOWEST PRIORITY
   map.with_options :controller => 'essays' do |m|
@@ -40,12 +46,6 @@ ActionController::Routing::Routes.draw do |map|
       # get.essays ':username/edit/essay/:title', :action => 'edit' 
     end
   end
-
-  map.resource :account, :controller => "users"
-
-  # FIXME: Para que tengo esta ruta???
-  map.resources :users          
-  map.resource :user_session
 
   # USER'S HEXAGON HOME SHOULD HAVE THE LOWEST PRIORITY
   map.with_options :controller => 'homepage' do |m|

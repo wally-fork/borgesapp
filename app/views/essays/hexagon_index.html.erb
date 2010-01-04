@@ -1,24 +1,20 @@
-<h1>You're at <%= @username %>'s hexagon</h1>
+<h1> <%=h @username %></h1>
 
 <table>
   <tr>
     <th>Title</th>
+    <th></th>
   </tr>
 
   <% @essays.each do |essay| %>
     <tr>
-      <td><%=h essay.title %></td>
-      <td><%= link_to "Show", "/#{@username}/essays/#{essay.title}" %></td>
-      <!-- <%= link_to "Show", 'essays/' + essay.title %> -->
-
-      <!-- <td><%= link_to 'Edit', edit_essay_path(essay) %></td> -->
-      <!-- <td><%= link_to 'Destroy', essay, :confirm => 'Are you sure?', :method => :delete %></td> -->
-      <!-- <td><%= link_to 'Destroy', '/essays/' + essay.title, :method => :delete%></td> -->
-
+      <% unless essay.is_private? -%>
+        <td><%=h essay.title %></td>
+        <td><%= link_to "Show", "/#{@username}/essays/#{essay.title}" %></td>
+      <% end -%>
     </tr>
   <% end %>
 </table>
 
 <br />
 
-<!-- <%= link_to 'New essay', new_essay_path %> -->

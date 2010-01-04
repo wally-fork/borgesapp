@@ -2,7 +2,22 @@
 
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
+  <!-- <%= render :partial => "form", :object => f %> -->
+  <!-- <%= f.label :login %><br /> -->
+  <!-- <%= f.text_field :login %><br /> -->
+  <!-- <br /> -->
+  <%= f.label :password, f.object.new_record? ? nil : "Change password" %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %><br />
+  <br />
+  <%= f.label :first_name %><br />
+  <%= f.text_field :first_name%><br />
+  <br />
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name%><br />
+  <br />
   <%= f.submit "Update" %>
 <% end %>
 

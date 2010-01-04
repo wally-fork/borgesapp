@@ -1,9 +1,6 @@
-Private:
-
 <div style="font-weight:bold; font-size:30px ">
-  <%=h @essay.title.capitalize if !@essay.nil? %>
+  <%= !@essay.nil? and !@essay.pretty_title.nil? ? @essay.pretty_title.capitalize : "Untitled" %>
 </div>
-
 
 <div>
   <%=RedCloth.new(@essay.content, [:sanitize_html]).to_html if !@essay.nil? %>

@@ -5,13 +5,20 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :essay_title %><br />
+    <%= f.text_field :pretty_title %>
   </p>
+
   <p>
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </p>
+
+  <p>
+    <%= f.label :url_name %><br />
+    <%= f.text_field :title %>
+  </p>
+
   <p>
     <%= f.submit 'Create' %>
   </p>

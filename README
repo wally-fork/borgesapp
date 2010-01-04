@@ -1,3 +1,14 @@
+Enero 03 de 2010
+
+- Voy a cambiar lo del titulo que aparece en el header y 
+el del resource name.
+X Terminar la feature de poner los datos para crear los pdfs...
+X *essays* deberia de tener essay_title y resource_name, pero luego lo cambio
+X que no sea user_session/new 
+- cambiar pdflatex a xetex!!!
+- Cambiar los nombres de las columnas bien, y arreglar el elisp cliente 
+
+--------------------------------------------------------------
 Diciembre 31 de 2009, 
 
 Cambiar las rutas de /wallyqs a /users/wallyqs... no?
