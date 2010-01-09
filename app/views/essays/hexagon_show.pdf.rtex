@@ -4,7 +4,7 @@
 %% \selectlanguage{spanish}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
-\title{<%= @essay.pretty_title unless @essay.pretty_title.nil? %>}
+\title{<%= @essay.title unless @essay.title.nil? %>}
 \author{<%= @essay.user.login %> \\ }
 \date{<%= @essay.updated_at.to_date %>}
 \begin{document}

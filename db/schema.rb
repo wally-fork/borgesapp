@@ -9,16 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091231073402) do
+ActiveRecord::Schema.define(:version => 20100109173916) do
 
   create_table "essays", :force => true do |t|
-    t.string   "title"
+    t.string   "url_title"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.boolean  "is_private",   :default => false
-    t.string   "pretty_title"
+    t.boolean  "is_private", :default => false
+    t.string   "title"
   end
 
   add_index "essays", ["user_id"], :name => "index_essays_on_user_id"

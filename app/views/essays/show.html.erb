@@ -1,5 +1,5 @@
 <div style="font-weight:bold; font-size:30px ">
-  <%= !@essay.nil? and !@essay.pretty_title.nil? ? @essay.pretty_title.capitalize : "Untitled" %>
+  <%= (!@essay.nil? and !@essay.title.nil?) ? @essay.title.capitalize : "Untitled" %>
 </div>
 
 <div>

@@ -3,9 +3,14 @@ class HomepageController < ApplicationController
   def home;  end
   def hexagon_home
     @username = params[:username]
+    found_user = User.find_by_login(@username)
     
     respond_to do |format|
-      format.html
+      if found_user.nil?
+        format.html { redirect_to "home"}
+      else
+        format.html             # render view
+      end
     end
     
   end

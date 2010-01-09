@@ -1,18 +1,18 @@
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Url_Title</th>
     <th>Content</th>
   </tr>
 
   <% @essays.each do |essay| %>
     <tr style="<%= essay.is_private? ? 'color:red; font-weight:bold;' : ''  %>">
-      <td><%=h essay.title %></td>
+      <td><%=h essay.url_title %></td>
       <td><%=h essay.content %></td>
-      <td><%= link_to "Show", '/essays/' + essay.title %>       </td>
-      <td><%= link_to 'Edit', essay_edit_path(essay.title) %></td>
+      <td><%= link_to "Show", '/essays/' + essay.url_title %>       </td>
+      <td><%= link_to 'Edit', essay_edit_path(essay.url_title) %></td>
       <!-- <td><%= link_to 'Destroy', essay, :confirm => 'Are you sure?', :method => :delete %></td> -->
-      <!-- <td><%= link_to 'Destroy', '/essays/' + essay.title, :method => :delete%></td> -->
+      <!-- <td><%= link_to 'Destroy', '/essays/' + essay.url_title, :method => :delete%></td> -->
     </tr>
   <% end %>
 </table>

@@ -2,15 +2,15 @@
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Url_Title</th>
     <th></th>
   </tr>
 
   <% @essays.each do |essay| %>
     <tr>
       <% unless essay.is_private? -%>
-        <td><%=h essay.title %></td>
-        <td><%= link_to "Show", "/#{@username}/essays/#{essay.title}" %></td>
+        <td><%=h essay.url_title %></td>
+        <td><%= link_to "Show", "/#{@username}/essays/#{essay.url_title}" %></td>
       <% end -%>
     </tr>
   <% end %>

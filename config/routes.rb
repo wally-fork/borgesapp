@@ -6,11 +6,11 @@ ActionController::Routing::Routes.draw do |map|
                                      :conditions => { :method => :get}
 
 
-  map.essay_show 'essays/:title.:format',  :controller => 'essays',
+  map.essay_show 'essays/:url_title.:format',  :controller => 'essays',
                                            :action     => 'show',  
                                            :conditions => { :method => :get}
 
-  map.essay_update 'essays/:title.:format',  :controller => 'essays',
+  map.essay_update 'essays/:url_title.:format',  :controller => 'essays',
                                              :action     => 'update',  
                                              :conditions => { :method => :put}
   
@@ -19,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
                                :action     => 'new',  
                                :conditions => { :method => :get}
   
-  map.essay_edit 'edit/essays/:title',  :controller => 'essays',
+  map.essay_edit 'edit/essays/:url_title',  :controller => 'essays',
                                        :action     => 'edit',  
                                        :conditions => { :method => :get}
 
@@ -41,9 +41,9 @@ ActionController::Routing::Routes.draw do |map|
     m.with_options :conditions => { :method => :get } do |get|
       # Se deben de tener vistas separadas o debo de usar las mismas para todo???
       get.hexagon_essays ':username/essays', :action => 'hexagon_index'
-      get.hexagon_essays ':username/essays/:title.:format',     :action => 'hexagon_show' 
+      get.hexagon_essays ':username/essays/:url_title.:format',     :action => 'hexagon_show' 
       # get.essays ':username/new/essay/',        :action => 'new' 
-      # get.essays ':username/edit/essay/:title', :action => 'edit' 
+      # get.essays ':username/edit/essay/:url_title', :action => 'edit' 
     end
   end
 
@@ -63,9 +63,9 @@ ActionController::Routing::Routes.draw do |map|
   # map.user_essays 'user/essays/',  :controller => 'essays',
   # :action     => 'index',  
   # :conditions => { :method => :get}
-  #   map.resource 'essays/:title.:format',
+  #   map.resource 'essays/:url_title.:format',
   #   :controller => 'essays'
-  # map.resources :essays, :path_prefix => "/essays/:title.:format"
+  # map.resources :essays, :path_prefix => "/essays/:url_title.:format"
   
   map.resources :essays
 
@@ -76,7 +76,7 @@ ActionController::Routing::Routes.draw do |map|
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
 
-  #   map.connect 'essays/:title', :controller => 'essays', :action => 'show'
+  #   map.connect 'essays/:url_title', :controller => 'essays', :action => 'show'
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'

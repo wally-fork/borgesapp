@@ -35,9 +35,9 @@ class EssaysController < ApplicationController
     end
   end
 
-  # GET /essays/:title.xml
+  # GET /essays/:url_title.xml
   def show
-    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => current_user.id})
+    @essay = Essay.first(:conditions => { :url_title => params[:url_title], :user_id => current_user.id})
     
     respond_to do |format|
       format.html # show.html.erb
@@ -50,10 +50,10 @@ class EssaysController < ApplicationController
   def hexagon_show
     @username = params[:username]
     @user = User.find_by_login(@username)
-    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => @user.id})
+    @essay = Essay.first(:conditions => { :url_title => params[:url_title], :user_id => @user.id})
 
     # @essays = Essay.first
-    # @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
+    # @essay = Essay.find_by_url_title(params[:url_title]) if !params[:url_title].nil?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -72,9 +72,9 @@ class EssaysController < ApplicationController
     end
   end
 
-  # GET /edit/essays/:title
+  # GET /edit/essays/:url_title
   def edit
-    @essay = Essay.first(:conditions => { :title => params[:title], :user_id => current_user.id})
+    @essay = Essay.first(:conditions => { :url_title => params[:url_title], :user_id => current_user.id})
   end
 
   # POST /essays
@@ -86,8 +86,8 @@ class EssaysController < ApplicationController
     respond_to do |format|
       if @essay.save
         flash[:notice] = 'Essay was successfully created.'
-        # format.html { redirect_to :action => 'show', :title => @essay.title }
-        format.html { redirect_to "#{current_user.login}/essays/#{@essay.title}"}
+        # format.html { redirect_to :action => 'show', :url_title => @essay.url_title }
+        format.html { redirect_to "#{current_user.login}/essays/#{@essay.url_title}"}
         format.xml  { render :xml => @essay, :status => :created, :location => @essay }
       else
         format.html { render :action => "new" }
@@ -96,16 +96,16 @@ class EssaysController < ApplicationController
     end
   end
 
-  # PUT /essays/:title
-  # PUT /essays/:title.xml
+  # PUT /essays/:url_title
+  # PUT /essays/:url_title.xml
   def update
-    @essay = Essay.find_by_title(params[:title]) if !params[:title].nil?
+    @essay = Essay.find_by_url_title(params[:url_title]) if !params[:url_title].nil?
 
     respond_to do |format|
       if @essay.update_attributes(params[:essay])
         flash[:notice] = 'Essay was successfully updated.'
-        # format.html { redirect_to :action => 'show', :title => @essay.title}
-        format.html { redirect_to "#{current_user.login}/essays/#{@essay.title}"}
+        # format.html { redirect_to :action => 'show', :url_title => @essay.url_title}
+        format.html { redirect_to "#{current_user.login}/essays/#{@essay.url_title}"}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -119,8 +119,8 @@ class EssaysController < ApplicationController
   def destroy
     # @essay = Essay.find(params[:id])
     # Lo que pasa es que el metodo delete me pasa una id en los params de a afuerzas
-    # en este caso se usa params[:id] en vez de params[:title] como lo hice en el show
-    @essay = Essay.find_by_title(params[:id]) if !params[:id].nil?
+    # en este caso se usa params[:id] en vez de params[:url_title] como lo hice en el show
+    @essay = Essay.find_by_url_title(params[:id]) if !params[:id].nil?
     @essay.destroy
 
     respond_to do |format|
